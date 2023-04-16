@@ -11,7 +11,7 @@ type Props = {
   name: string;
   year: string;
   description: string;
-  rating: string;
+  // rating: string;
   companies: Companies[];
   platforms: Platform[];
   genres: Genre[];
@@ -25,7 +25,7 @@ const MovieInfo = ({
   description,
   platforms,
   companies,
-  rating
+  // rating
 }: Props) => (
   <div className='relative w-full h-auto p-4'>
     <div className='relative h-full min-h-128 flex flex-col md:flex-row max-w-7xl p-4 m-auto z-10 rounded-xl bg-zinc-800 bg-opacity-90'>

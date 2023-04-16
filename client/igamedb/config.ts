@@ -7,12 +7,10 @@ const SEARCH_IGDB_BASE_URL: string = ''
 const POPULAR_IGDB_BASE_URL: string = ''
 
 const igdbGameUrl = (id?:string) => ``
-const igdbCreditsUrl = (id?:string) => ``
 
 //Configuration for OPENCRITIC_API
-// const X_RAPIDAPI_KEY: string = 'aee0ed9201mshf5c73b9b0230b4cp19c726jsn25d024e5bc57'
-const X_RAPIDAPI_KEY: string = '1673858ce1mshc2a4b5c284a65b9p1d58f8jsn9ead8c6502eb'
-// const X_RAPIDAPI_KEY:  string | undefined = process.env.API_KEY_RAPIDAPI ;
+const X_RAPIDAPI_KEY:  string | undefined = process.env.API_KEY_RAPIDAPI ;
+const RAPIDAPI_KEY: string =  `${X_RAPIDAPI_KEY}`
 const X_RAPIDAPI_URL: string = 'https://opencritic-api.p.rapidapi.com/';
 const X_RAPIDAPI_HOST: string =  'opencritic-api.p.rapidapi.com';
 
@@ -20,7 +18,6 @@ const SEARCH_RAPIDAPI_BASE_URL: string = `${X_RAPIDAPI_URL}game/search?criteria=
 const POPULAR_RAPIDAPI_BASE_URL: string = `${X_RAPIDAPI_URL}game/popular`;
 
 const rapidApiGameUrl = (id?:string) => `${X_RAPIDAPI_URL}game/`+id
-const rapidApiCreditsUrl = (id?:string) => ``
 
 const RAPIDAPI_IMAGE_BASE_URL: string = 'https://img.opencritic.com/';
 //images: masthead: og (banner)
@@ -32,7 +29,7 @@ export {
   POPULAR_IGDB_BASE_URL,
   igdbGameUrl,
   igdbCreditsUrl,
-  X_RAPIDAPI_KEY,
+  RAPIDAPI_KEY,
   X_RAPIDAPI_URL,
   X_RAPIDAPI_HOST,
   SEARCH_RAPIDAPI_BASE_URL,
