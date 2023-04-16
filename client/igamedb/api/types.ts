@@ -3,11 +3,13 @@ export type Game = {
   id: number;
   description: string;
   percentRecommended: string;
-  meadianScore: number;
+  medianScore: string;
   firstReleaseDate: string;
   Rating: string;
   Platforms: Platform[];
   Genres: Genre[];
+  images: images;
+  Companies: Companies[];
 }
 
 export type Platform = {
@@ -42,13 +44,28 @@ export type GamePopulars = {
   images: box;
 }
 
-export type box = {
-  box: any;
+export type images ={
+  box: box;
+  masthead: masthead;
+  screenshots: screenshots;
+  banner: banner;
 }
-
+export type box = {
+  box: og;
+}
 export type og = {
   og:string;
 }
 export type sm = {
   sm:string;
+}
+export type masthead = {
+  og: og;
+}
+export type screenshots = {
+  og: og;
+}
+export type banner = {
+  og: og;
+
 }

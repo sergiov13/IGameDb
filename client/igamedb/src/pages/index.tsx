@@ -19,28 +19,26 @@ const Home: NextPage = () => {
   if (isLoading) {
     return <h2> Loading</h2>
   }
-  if (data) {
-    console.log(data[0].images.box.og);
-  }
+
   return (
     <main className="relative h-screen overflow-y-scroll">
-    <Header setQuery={setQuery} />
+    <Header setQuery={setQuery}/>
       {!query && data ? (
         <Hero imgUrl={data[0].images.box.og ? RAPIDAPI_IMAGE_BASE_URL+'game/1548/o/mczHwCVT.jpg' : '/no_image.jpg'}
         name={"The Legend of Zelda: Breath of the Wild"}
-        id={"Step into a world of discovery, exploration, and adventure in The Legend of Zelda: Breath of the Wild, a boundary-breaking new game in the acclaimed series. Travel across vast fields, through forests, and to mountain peaks as you discover what has become of the kingdom of Hyrule in this stunning Open-Air Adventure. Now on the Nintendo Switch console, your journey is freer and more open than ever. Take your system anywhere, and adventure as Link any way you like."}
+        description={"Step into a world of discovery, exploration, and adventure in The Legend of Zelda: Breath of the Wild, a boundary-breaking new game in the acclaimed series. Travel across vast fields, through forests, and to mountain peaks as you discover what has become of the kingdom of Hyrule in this stunning Open-Air Adventure. Now on the Nintendo Switch console, your journey is freer and more open than ever. Take your system anywhere, and adventure as Link any way you like."}
         />
       ) : null} 
       <Grid 
       className='p-4 max-w-7xl m-auto' 
       name={data ? data[0].name : "Name"}>
         {data ? data.map(game => (
-          <Link key={game.id} href={`${game.id}`}>
-          <div className='cursos-pointer hover:opacity-80 duration-300'>
+          <Link key={game.topCriticScore} href={`${game.id}`}>
+          <div key={game.id} className='cursos-pointer hover:opacity-80 duration-300'>
             <Card
               imgUrl={game.images.box.og ? RAPIDAPI_IMAGE_BASE_URL+game.images.box.og : '/no_image.jpg'}
               name={game.name}
-              subtitle = {game.images.box.og}/>
+              subtitle = {""}/>
           </div>
           </Link>
           )) : null}
