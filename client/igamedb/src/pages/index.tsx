@@ -16,7 +16,7 @@ import { RAPID_API_IMAGE_BASE_URL } from "../../config";
 const Home: NextPage = () => {
   const [query, setQuery] = React.useState("");
   const { data, isLoading, isFetching, error } = useFetchPopular(query);
-
+  //test
   return (
     <main className="relative h-screen overflow-y-scroll ">
       <Header setQuery={setQuery} />
