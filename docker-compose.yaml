@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  nextjs:
+    ports:
+      - 3000:3000
+    build:
+      context: client/igamedb
+      dockerfile: Dockerfile
+    volumes:
+      - ./client/igamedb:/usr/src/app
+      - /usr/src/app/node_modules
+      - /usr/src/app/.next
+    env_file:
+      - ./client/igamedb/.env

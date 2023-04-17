@@ -31,27 +31,29 @@ export type Genre = {
 } 
 
 export type GameSearchResults = {
-  id: number;
-  name:string;
-  dist:number;
+  count: number;
+  next: string;
+  previous: string;
+  results: Game[];
 }
 
 export type GamePopulars = {
   topCriticScore: number;
   tier: string;
   name: string;
-  id: number;
-  images: box;
+  id: string;
+  images: images;
 }
 
-export type images ={
+export type images = {
   box: box;
   masthead: masthead;
   screenshots: screenshots;
   banner: banner;
 }
 export type box = {
-  box: og;
+  og: string;
+  sm: sm;
 }
 export type og = {
   og:string;

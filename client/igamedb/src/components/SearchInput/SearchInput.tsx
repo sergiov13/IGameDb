@@ -5,7 +5,7 @@ type Props = {
   setQuery: React.Dispatch<React.SetStateAction<string>>; // See setQuery in pages/index.tsx to get type of setQuery
 }
 
-const TIME = 1000 //ms it will wait before re rendering when input is changing
+const TIME = 700 //ms it will wait before re rendering when input is changing
 
 //const SearchInput: ReactFC<Props> = ({setQuery}) =>{ 
 //Same as doing whats below 

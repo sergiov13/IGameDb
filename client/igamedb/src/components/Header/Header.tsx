@@ -10,8 +10,8 @@ type Props = {
 
 // we can create a context to avoid drilling but since its obnly two we will ignore it for now
 //
-const Header = ({ setQuery }: Props) => (
-  <div className="sticky flex top-0 z-40 w-full h-24 bg-zinc-900">
+const Header = ({ setQuery}: Props) => (
+  <div className="sticky flex top-0 z-40 w-full h-20 bg-zinc-900">
     <div className="flex justify-between w-full h-full m-auto max-w-7xl px-4">
       <Link href="/">
         <div className="flex items-center cursor-pointer">

@@ -40,7 +40,7 @@ const MovieInfo = ({
           {name} ({year})
         </h2>
         <h3 className='text-lg font-bold'>Description</h3>
-        <p className='mb-6 text-sm md:text-lg'>{description}</p>
+        <p className='mb-6 text-sm md:text-base'>{description}</p>
         <div>
           <div>
              <h3 className='text-lg font-bold'>Compan{companies.length > 1 ? 'ies' : 'y'}</h3> 

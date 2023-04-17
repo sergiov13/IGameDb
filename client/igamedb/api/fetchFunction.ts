@@ -1,22 +1,20 @@
 import { GameSearchResults, Game, GamePopulars } from "./types";
 //import key and url
-import { POPULAR_RAPIDAPI_BASE_URL, X_RAPIDAPI_KEY, SEARCH_RAPIDAPI_BASE_URL, X_RAPIDAPI_HOST, X_RAPIDAPI_URL } from "../config"
+import { RAPID_API_POPULAR_BASE_URL, RAPID_API_KEY, RAPID_API_SEARCH_BASE_URL, RAPID_API_HOST } from "../config"
 
 export const basicFetch = async <returnType>(endpoint: string): Promise<returnType> => {
   
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': X_RAPIDAPI_KEY,
-      'X-RapidAPI-Host': X_RAPIDAPI_HOST
-    }
+      'X-RapidAPI-Key': RAPID_API_KEY,
+      'X-RapidAPI-Host': RAPID_API_HOST
+    },
+    next: { revalidate: 43200 }
   };
-
-  console.log(endpoint);
+  
   const response = await fetch(endpoint, options)
-  console.log(response);
   if(!response.ok) throw new Error("Error fetching");
-
   const data = await response.json();
   return data;
 };
@@ -24,16 +22,14 @@ export const basicFetch = async <returnType>(endpoint: string): Promise<returnTy
 //FETCH FUNCTIONS
 
 export const fetchGames = async (search:string): Promise<GameSearchResults[]> => {
-  const url = SEARCH_RAPIDAPI_BASE_URL+search
+  const url = RAPID_API_SEARCH_BASE_URL+search
   return await basicFetch<GameSearchResults[]>(url);
 };
 
-// export const fetchGame = async (id:number): Promise<Game> => {
-//   const url = X_RAPIDAPI_URL+"game/"+id
-//   return await basicFetch<Game>(url);
-// }
-
-export const fetchPopular = async (): Promise<GamePopulars[]> => {
-  const url = POPULAR_RAPIDAPI_BASE_URL
+export const fetchPopular = async (search:string): Promise<GamePopulars[]> => {
+  let url = RAPID_API_POPULAR_BASE_URL
+  if (search.length > 0){
+    url = RAPID_API_SEARCH_BASE_URL+search
+  }
   return await basicFetch<GamePopulars[]>(url);
 }

@@ -4,11 +4,13 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchGames, fetchPopular } from "./fetchFunction";
 
 export const useFetchGames = (search: string) => {
-  return useQuery(['Games',search],() => fetchGames(search), {retry: false})
+  const data = useQuery(['Games',search],() => fetchGames(search), {retry: false})
+  return data  
 }
 
-export const useFetchPopular = () => {
-  return useQuery(['Games','Popular'],() => fetchPopular(), {retry: false});
+export const useFetchPopular = (search: string) => {
+  const data = useQuery(['Games', search],() => fetchPopular(search), {retry: false});
+  return data;
 }
 
 // export const useFetchGame = (id: number) => {
