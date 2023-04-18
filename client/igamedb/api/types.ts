@@ -2,7 +2,6 @@ export type Game = {
   name: string;
   id: number;
   description: string;
-  percentRecommended: string;
   medianScore: string;
   firstReleaseDate: string;
   Rating: string;
@@ -53,7 +52,6 @@ export type images = {
 }
 export type box = {
   og: string;
-  sm: sm;
 }
 export type og = {
   og:string;
