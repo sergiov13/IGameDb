@@ -1,12 +1,15 @@
 # IGameDb
 Internet Games Small DataBase POC
-Front 
-NextJs
+FrontEnd NextJs
 React-Query
-Docker
-Docker-compose up to run 
+
+Backend NestJs and Postgres
 
 pg: Postgres driver for NodeJS
 typeorm: ORM for NodeJS
 @nestjs/typeorm: NestJS module for TypeORM
 @nestjs/config: NestJS module for configuration
+
+Run local environment:
+
+docker-compose up
