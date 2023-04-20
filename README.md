@@ -5,6 +5,7 @@ React-Query
 
 Backend NestJs and Postgres
 
+Prisma: For db migrations and population
 pg: Postgres driver for NodeJS
 typeorm: ORM for NodeJS
 @nestjs/typeorm: NestJS module for TypeORM
