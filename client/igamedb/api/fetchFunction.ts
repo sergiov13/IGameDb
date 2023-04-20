@@ -12,7 +12,6 @@ export const basicFetch = async <returnType>(endpoint: string): Promise<returnTy
     },
     next: { revalidate: 43200 }
   };
-  console.log(RAPID_API_KEY)
   const response = await fetch(endpoint, options)
   if(!response.ok) throw new Error("Error fetching");
   const data = await response.json();
