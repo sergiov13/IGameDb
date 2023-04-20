@@ -8,11 +8,11 @@ import {
   Delete,
   NotFoundException,
 } from '@nestjs/common';
-import { GameService } from './games.service';
+import { GameService } from './game.service';
 import { Game } from './game.entity';
 
-@Controller('Games')
-export class GamesController {
+@Controller('Game')
+export class GameController {
   constructor(private readonly GameService: GameService) {}
 
   //get all Games

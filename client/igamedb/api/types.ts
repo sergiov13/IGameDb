@@ -47,7 +47,6 @@ export type GamePopulars = {
 export type images = {
   box: box;
   masthead: masthead;
-  screenshots: screenshots;
   banner: banner;
 }
 export type box = {
@@ -62,9 +61,7 @@ export type sm = {
 export type masthead = {
   og: og;
 }
-export type screenshots = {
-  og: og;
-}
+
 export type banner = {
   og: og;
 
