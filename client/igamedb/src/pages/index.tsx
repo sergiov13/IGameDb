@@ -17,7 +17,7 @@ const Home: NextPage = () => {
   const [query, setQuery] = React.useState("");
   const { data, isLoading, isFetching, error } = useFetchPopular(query);
 
-  if (error) return <div> Something went wrong </div>
+  // if (error) return <div> Something went wrong </div>
   return (
     <main className="relative h-screen overflow-y-scroll ">
       <Header setQuery={setQuery} />

@@ -1,6 +1,6 @@
 //Configuration for OPENCRITIC_API
-const X_RAPIDAPI_KEY: string | undefined = process.env.API_KEY_RAPIDAPI
-const RAPID_API_KEY: string =  `${X_RAPIDAPI_KEY}`
+const NEXT_PUBLIC_X_RAPIDAPI_KEY: string | undefined = process.env.NEXT_PUBLIC_API_KEY_RAPIDAPI
+const RAPID_API_KEY: string =  `${NEXT_PUBLIC_X_RAPIDAPI_KEY}`
 const RAPID_API_URL: string = 'https://opencritic-api.p.rapidapi.com/';
 const RAPID_API_HOST: string =  'opencritic-api.p.rapidapi.com';
 
